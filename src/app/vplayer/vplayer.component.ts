@@ -32,13 +32,15 @@ export class  VplayerComponent implements OnInit{
 
       this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
       this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+      // this.api.play();
   }
 
   nextVideo() {
       this.currentIndex++;
 
-      if (this.currentIndex === this.clips.length) {
-          this.api.pause();
+      if (this.currentIndex === this.clips.length ) {
+          // this.api.pause();
+          return
       }
 
       this.currentItem = this.clips[ this.currentIndex ];
